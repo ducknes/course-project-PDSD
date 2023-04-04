@@ -8,13 +8,13 @@ struct SetList {
     SetList* next;
 };
 
-class Set
+class ListSet
 {
 private:
     SetList* head;
 public:
     // F1  Создание пустого множества
-    Set();
+    ListSet();
 
     // F2 Проверка на пустоту множества
     bool isSetEmpty();
@@ -28,7 +28,7 @@ public:
 
     // F5 Создание множества по заданным параметрам, проверяя возможность
     //  создания множества
-    Set(int size, int min, int max); 
+    ListSet(int size, int min, int max); 
 
     // F6 Мощность множества
     int setPowers(); 
@@ -37,23 +37,23 @@ public:
     string setView(char separator); 
 
     // F8 Удаление множества (очистка занимаемой множеством памяти)
-    ~Set();
+    ~ListSet();
 
     // F9 Подмножестов А-B
-    bool isSubSet(Set* setSecond);
+    bool isSubSet(ListSet* setSecond);
 
     // F10 Равенство двух множеств А-В
-    bool isSetsEquals(Set* setSecond);
+    bool isSetsEquals(ListSet* setSecond);
 
     // F11 Объединение двух множеств
-    Set* unionOfSets(Set* setSecond);
+    ListSet* unionOfSets(ListSet* setSecond);
 
     // F12 Пересечение двух множеств
-    Set* intersectionsOfSets(Set* setSecond);
+    ListSet* intersectionsOfSets(ListSet* setSecond);
 
     // F13 Разность множеств
-    Set* differenceOfSets(Set* setSecond);
+    ListSet* differenceOfSets(ListSet* setSecond);
 
     // F14 Симметричная разность
-    Set* symmetricDifferenceOfSets(Set* setSecond);
+    ListSet* symmetricDifferenceOfSets(ListSet* setSecond);
 };

@@ -4,13 +4,13 @@
 #include <list>
 using namespace std;
 
-class Set
+class ContListSet
 {
 private:
     list<int> set;
 public:
     // F1  Создание пустого множества
-    Set();
+    ContListSet();
 
     // F2 Проверка на пустоту множества
     bool isSetEmpty();
@@ -24,7 +24,7 @@ public:
 
     // F5 Создание множества по заданным параметрам, проверяя возможность
     //  создания множества
-    Set(int size, int min, int max); 
+    ContListSet(int size, int min, int max); 
 
     // F6 Мощность множества
     int setPowers(); 
@@ -33,23 +33,23 @@ public:
     string setView(char separator); 
 
     // F8 Удаление множества (очистка занимаемой множеством памяти)
-    ~Set();
+    ~ContListSet();
 
     // F9 Подмножестов А-B
-    bool isSubSet(Set* setSecond);
+    bool isSubSet(ContListSet* setSecond);
 
     // F10 Равенство двух множеств А-В
-    bool isSetsEquals(Set* setSecond);
+    bool isSetsEquals(ContListSet* setSecond);
 
     // F11 Объединение двух множеств
-    Set* unionOfSets(Set* setSecond);
+    ContListSet* unionOfSets(ContListSet* setSecond);
 
     // F12 Пересечение двух множеств
-    Set* intersectionsOfSets(Set* setSecond);
+    ContListSet* intersectionsOfSets(ContListSet* setSecond);
 
     // F13 Разность множеств
-    Set* differenceOfSets(Set* setSecond);
+    ContListSet* differenceOfSets(ContListSet* setSecond);
 
     // F14 Симметричная разность
-    Set* symmetricDifferenceOfSets(Set* setSecond);
+    ContListSet* symmetricDifferenceOfSets(ContListSet* setSecond);
 };

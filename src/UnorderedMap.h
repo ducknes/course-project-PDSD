@@ -4,13 +4,13 @@
 #include <unordered_map>
 using namespace std;
 
-class Set
+class UnorderedMapSet
 {
 private:
     unordered_map<int, int> set;
 public:
     // F1  Создание пустого множества
-    Set();
+    UnorderedMapSet();
 
     // F2 Проверка на пустоту множества
     bool isSetEmpty();
@@ -24,7 +24,7 @@ public:
 
     // F5 Создание множества по заданным параметрам, проверяя возможность
     //  создания множества
-    Set(int size, int min, int max); 
+    UnorderedMapSet(int size, int min, int max); 
 
     // F6 Мощность множества
     int setPowers(); 
@@ -33,23 +33,23 @@ public:
     string setView(char separator); 
 
     // F8 Удаление множества (очистка занимаемой множеством памяти)
-    ~Set();
+    ~UnorderedMapSet();
 
     // F9 Подмножестов А-B
-    bool isSubSet(Set* setSecond);
+    bool isSubSet(UnorderedMapSet* setSecond);
 
     // F10 Равенство двух множеств А-В
-    bool isSetsEquals(Set* setSecond);
+    bool isSetsEquals(UnorderedMapSet* setSecond);
 
     // F11 Объединение двух множеств
-    Set* unionOfSets(Set* setSecond);
+    UnorderedMapSet* unionOfSets(UnorderedMapSet* setSecond);
 
     // F12 Пересечение двух множеств
-    Set* intersectionsOfSets(Set* setSecond);
+    UnorderedMapSet* intersectionsOfSets(UnorderedMapSet* setSecond);
 
     // F13 Разность множеств
-    Set* differenceOfSets(Set* setSecond);
+    UnorderedMapSet* differenceOfSets(UnorderedMapSet* setSecond);
 
     // F14 Симметричная разность
-    Set* symmetricDifferenceOfSets(Set* setSecond);
+    UnorderedMapSet* symmetricDifferenceOfSets(UnorderedMapSet* setSecond);
 };

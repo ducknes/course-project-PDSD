@@ -1,22 +1,22 @@
 #include "UnorderedMap.h"
 
 // F1  Создание пустого множества
-Set::Set() {
+UnorderedMapSet::UnorderedMapSet() {
     set = {};
 }
 
 // F2 Проверка на пустоту множества
-bool Set::isSetEmpty() {
+bool UnorderedMapSet::isSetEmpty() {
     return set.empty();
 }
 
 // F3 Проверка элемента на принадлежность множеству
-bool Set::isSetHasElement(int element) {
+bool UnorderedMapSet::isSetHasElement(int element) {
     return this->set.contains(element);
 }
 
 // F4 Добавление нового элемента в начало множества
-bool Set::addNewElement(int element) {
+bool UnorderedMapSet::addNewElement(int element) {
     if (!this->isSetHasElement(element)) {
         return this->set.insert({element, element}).second;
     }
@@ -24,7 +24,7 @@ bool Set::addNewElement(int element) {
 
 // F5 Создание множества по заданным параметрам, проверяя возможность
 //  создания множества
-Set::Set(int size, int min, int max) {
+UnorderedMapSet::UnorderedMapSet(int size, int min, int max) {
     if (size <= 0) {
         set = {};
     }
@@ -48,12 +48,12 @@ Set::Set(int size, int min, int max) {
 }
 
 // F6 Мощность множества
-int Set::setPowers() {
+int UnorderedMapSet::setPowers() {
     return this->set.size();
 }
 
 // F7 Вывод элементов множества
-string Set::setView(char separator) {
+string UnorderedMapSet::setView(char separator) {
     if (this->isSetEmpty()) {
         return "";
     }
@@ -66,12 +66,12 @@ string Set::setView(char separator) {
 }
 
 // F8 Удаление множества (очистка занимаемой множеством памяти)
-Set::~Set() {
+UnorderedMapSet::~UnorderedMapSet() {
     this->set.clear();
 }
 
 // F9 Подмножестов А-B
-bool Set::isSubSet(Set* setSecond) {
+bool UnorderedMapSet::isSubSet(UnorderedMapSet* setSecond) {
     if (this->isSetEmpty()) {
         return true;
     }
@@ -89,13 +89,13 @@ bool Set::isSubSet(Set* setSecond) {
 }
   
 // F10 Равенство двух множеств А-В
-bool Set::isSetsEquals(Set* setSecond) {
+bool UnorderedMapSet::isSetsEquals(UnorderedMapSet* setSecond) {
     return this->isSubSet(setSecond) && setSecond->isSubSet(this);
 }
 
 // F11 Объединение двух множеств
-Set* Set::unionOfSets(Set* setSecond) {
-    Set* unionSet = new Set();
+UnorderedMapSet* UnorderedMapSet::unionOfSets(UnorderedMapSet* setSecond) {
+    UnorderedMapSet* unionSet = new UnorderedMapSet();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
         unionSet->addNewElement(iter->second);
@@ -109,8 +109,8 @@ Set* Set::unionOfSets(Set* setSecond) {
 }
 
 // F12 Пересечение двух множеств
-Set* Set::intersectionsOfSets(Set* setSecond) {
-    Set* intersectionSet = new Set();
+UnorderedMapSet* UnorderedMapSet::intersectionsOfSets(UnorderedMapSet* setSecond) {
+    UnorderedMapSet* intersectionSet = new UnorderedMapSet();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
         if (setSecond->isSetHasElement(iter->second)){
@@ -122,8 +122,8 @@ Set* Set::intersectionsOfSets(Set* setSecond) {
 }
 
 // F13 Разность множеств
-Set* Set::differenceOfSets(Set* setSecond) {
-    Set* differenceSet = new Set();
+UnorderedMapSet* UnorderedMapSet::differenceOfSets(UnorderedMapSet* setSecond) {
+    UnorderedMapSet* differenceSet = new UnorderedMapSet();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
         if (!setSecond->isSetHasElement(iter->second)){
@@ -135,8 +135,8 @@ Set* Set::differenceOfSets(Set* setSecond) {
 }
 
 // F14 Симметричная разность
-Set* Set::symmetricDifferenceOfSets(Set* setSecond) {
-    Set* unionSet = this->unionOfSets(setSecond);
-    Set* intersectionSet = this->intersectionsOfSets(setSecond);
+UnorderedMapSet* UnorderedMapSet::symmetricDifferenceOfSets(UnorderedMapSet* setSecond) {
+    UnorderedMapSet* unionSet = this->unionOfSets(setSecond);
+    UnorderedMapSet* intersectionSet = this->intersectionsOfSets(setSecond);
     return unionSet->differenceOfSets(intersectionSet);
 }

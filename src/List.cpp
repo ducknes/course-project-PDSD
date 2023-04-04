@@ -1,17 +1,17 @@
 #include "List.h"
 
 // F1  Создание пустого множества
-Set::Set() {
+ListSet::ListSet() {
     head = NULL;
 }
 
 // F2 Проверка на пустоту множества
-bool Set::isSetEmpty() {
+bool ListSet::isSetEmpty() {
     return head == NULL;
 }
 
 // F3 Проверка элемента на принадлежность множеству
-bool Set::isSetHasElement(int element) {
+bool ListSet::isSetHasElement(int element) {
     if (this->isSetEmpty()) {
         return false;
     }
@@ -27,7 +27,7 @@ bool Set::isSetHasElement(int element) {
 
 // F4 Добавление нового элемента в начало множества
 //SetList* 
-void Set::addNewElement(int element) {
+void ListSet::addNewElement(int element) {
     if (!this->isSetHasElement(element)) {
         SetList* newSet = new SetList{};
         newSet->next = this->head;
@@ -38,7 +38,7 @@ void Set::addNewElement(int element) {
 
 // F5 Создание множества по заданным параметрам, проверяя возможность
 //  создания множества
-Set::Set(int size, int min, int max) {
+ListSet::ListSet(int size, int min, int max) {
     if (size <= 0) {
         head = NULL;
     }
@@ -66,7 +66,7 @@ Set::Set(int size, int min, int max) {
 }
 
 // F6 Мощность множества
-int Set::setPowers() {
+int ListSet::setPowers() {
     long count = 0;
     SetList* current = this->head;
     while (current != nullptr) {
@@ -77,7 +77,7 @@ int Set::setPowers() {
 }
 
 // F7 Вывод элементов множества
-string Set::setView(char separator) {
+string ListSet::setView(char separator) {
     if (this->isSetEmpty()) {
         return "";
     }
@@ -91,7 +91,7 @@ string Set::setView(char separator) {
 }
 
 // F8 Удаление множества (очистка занимаемой множеством памяти)
-Set::~Set() {
+ListSet::~ListSet() {
     while (this->head != nullptr) {
         SetList* temp = this->head;
         this->head = this->head->next;
@@ -100,7 +100,7 @@ Set::~Set() {
 }
 
 // F9 Подмножестов А-B
-bool Set::isSubSet(Set* setSecond) {
+bool ListSet::isSubSet(ListSet* setSecond) {
     if (this->isSetEmpty()) {
         return true;
     }
@@ -120,13 +120,13 @@ bool Set::isSubSet(Set* setSecond) {
 }
   
 // F10 Равенство двух множеств А-В
-bool Set::isSetsEquals(Set* setSecond) {
+bool ListSet::isSetsEquals(ListSet* setSecond) {
     return this->isSubSet(setSecond) && setSecond->isSubSet(this);
 }
 
 // F11 Объединение двух множеств
-Set* Set::unionOfSets(Set* setSecond) {
-    Set* unionSet = new Set();
+ListSet* ListSet::unionOfSets(ListSet* setSecond) {
+    ListSet* unionSet = new ListSet();
 
     SetList* currentFirst = this->head;
     SetList* currentSecond = setSecond->head;
@@ -145,9 +145,9 @@ Set* Set::unionOfSets(Set* setSecond) {
 }
 
 // F12 Пересечение двух множеств
-Set* Set::intersectionsOfSets(Set* setSecond) {
+ListSet* ListSet::intersectionsOfSets(ListSet* setSecond) {
     SetList* currentFirst = this->head;
-    Set* intersectionSet = new Set();
+    ListSet* intersectionSet = new ListSet();
 
     while (currentFirst != nullptr) {
         if (setSecond->isSetHasElement(currentFirst->element)){
@@ -160,9 +160,9 @@ Set* Set::intersectionsOfSets(Set* setSecond) {
 }
 
 // F13 Разность множеств
-Set* Set::differenceOfSets(Set* setSecond) {
+ListSet* ListSet::differenceOfSets(ListSet* setSecond) {
     SetList* currentFirst = this->head;
-    Set* differenceSet = new Set();
+    ListSet* differenceSet = new ListSet();
 
     while (currentFirst != nullptr) {
         if (!setSecond->isSetHasElement(currentFirst->element)){
@@ -175,8 +175,8 @@ Set* Set::differenceOfSets(Set* setSecond) {
 }
 
 // F14 Симметричная разность
-Set* Set::symmetricDifferenceOfSets(Set* setSecond) {
-    Set* unionSet = this->unionOfSets(setSecond);
-    Set* intersectionSet = this->intersectionsOfSets(setSecond);
+ListSet* ListSet::symmetricDifferenceOfSets(ListSet* setSecond) {
+    ListSet* unionSet = this->unionOfSets(setSecond);
+    ListSet* intersectionSet = this->intersectionsOfSets(setSecond);
     return unionSet->differenceOfSets(intersectionSet);
 }

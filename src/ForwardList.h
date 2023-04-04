@@ -4,13 +4,13 @@
 #include <forward_list>
 using namespace std;
 
-class Set
+class ForwardListSet
 {
 private:
     forward_list<int> set;
 public:
     // F1  Создание пустого множества
-    Set();
+    ForwardListSet();
 
     // F2 Проверка на пустоту множества
     bool isSetEmpty();
@@ -24,7 +24,7 @@ public:
 
     // F5 Создание множества по заданным параметрам, проверяя возможность
     //  создания множества
-    Set(int size, int min, int max); 
+    ForwardListSet(int size, int min, int max); 
 
     // F6 Мощность множества
     int setPowers(); 
@@ -33,23 +33,23 @@ public:
     string setView(char separator); 
 
     // F8 Удаление множества (очистка занимаемой множеством памяти)
-    ~Set();
+    ~ForwardListSet();
 
     // F9 Подмножестов А-B
-    bool isSubSet(Set* setSecond);
+    bool isSubSet(ForwardListSet* setSecond);
 
     // F10 Равенство двух множеств А-В
-    bool isSetsEquals(Set* setSecond);
+    bool isSetsEquals(ForwardListSet* setSecond);
 
     // F11 Объединение двух множеств
-    Set* unionOfSets(Set* setSecond);
+    ForwardListSet* unionOfSets(ForwardListSet* setSecond);
 
     // F12 Пересечение двух множеств
-    Set* intersectionsOfSets(Set* setSecond);
+    ForwardListSet* intersectionsOfSets(ForwardListSet* setSecond);
 
     // F13 Разность множеств
-    Set* differenceOfSets(Set* setSecond);
+    ForwardListSet* differenceOfSets(ForwardListSet* setSecond);
 
     // F14 Симметричная разность
-    Set* symmetricDifferenceOfSets(Set* setSecond);
+    ForwardListSet* symmetricDifferenceOfSets(ForwardListSet* setSecond);
 };

@@ -1,17 +1,17 @@
 #include "ContList.h"
 
 // F1  Создание пустого множества
-Set::Set() {
+ContListSet::ContListSet() {
     set = {};
 }
 
 // F2 Проверка на пустоту множества
-bool Set::isSetEmpty() {
+bool ContListSet::isSetEmpty() {
     return set.empty();
 }
 
 // F3 Проверка элемента на принадлежность множеству
-bool Set::isSetHasElement(int element) {
+bool ContListSet::isSetHasElement(int element) {
     if (this->isSetEmpty()) {
         return false;
     }
@@ -26,7 +26,7 @@ bool Set::isSetHasElement(int element) {
 
 // F4 Добавление нового элемента в начало множества
 //SetList* s
-void Set::addNewElement(int element) {
+void ContListSet::addNewElement(int element) {
     if (!this->isSetHasElement(element)) {
         this->set.push_front(element);
     }
@@ -34,7 +34,7 @@ void Set::addNewElement(int element) {
 
 // F5 Создание множества по заданным параметрам, проверяя возможность
 //  создания множества
-Set::Set(int size, int min, int max) {
+ContListSet::ContListSet(int size, int min, int max) {
     if (size <= 0) {
         set = {};
     }
@@ -61,12 +61,12 @@ Set::Set(int size, int min, int max) {
 }
 
 // F6 Мощность множества
-int Set::setPowers() {
+int ContListSet::setPowers() {
     return this->set.size();
 }
 
 // F7 Вывод элементов множества
-string Set::setView(char separator) {
+string ContListSet::setView(char separator) {
     if (this->isSetEmpty()) {
         return "";
     }
@@ -79,12 +79,12 @@ string Set::setView(char separator) {
 }
 
 // F8 Удаление множества (очистка занимаемой множеством памяти)
-Set::~Set() {
+ContListSet::~ContListSet() {
     this->set.clear();
 }
 
 // F9 Подмножестов А-B
-bool Set::isSubSet(Set* setSecond) {
+bool ContListSet::isSubSet(ContListSet* setSecond) {
     if (this->isSetEmpty()) {
         return true;
     }
@@ -102,13 +102,13 @@ bool Set::isSubSet(Set* setSecond) {
 }
   
 // F10 Равенство двух множеств А-В
-bool Set::isSetsEquals(Set* setSecond) {
+bool ContListSet::isSetsEquals(ContListSet* setSecond) {
     return this->isSubSet(setSecond) && setSecond->isSubSet(this);
 }
 
 // F11 Объединение двух множеств
-Set* Set::unionOfSets(Set* setSecond) {
-    Set* unionSet = new Set();
+ContListSet* ContListSet::unionOfSets(ContListSet* setSecond) {
+    ContListSet* unionSet = new ContListSet();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
         unionSet->addNewElement(*iter);
@@ -122,8 +122,8 @@ Set* Set::unionOfSets(Set* setSecond) {
 }
 
 // F12 Пересечение двух множеств
-Set* Set::intersectionsOfSets(Set* setSecond) {
-    Set* intersectionSet = new Set();
+ContListSet* ContListSet::intersectionsOfSets(ContListSet* setSecond) {
+    ContListSet* intersectionSet = new ContListSet();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
         if (setSecond->isSetHasElement(*iter)){
@@ -135,8 +135,8 @@ Set* Set::intersectionsOfSets(Set* setSecond) {
 }
 
 // F13 Разность множеств
-Set* Set::differenceOfSets(Set* setSecond) {
-    Set* differenceSet = new Set();
+ContListSet* ContListSet::differenceOfSets(ContListSet* setSecond) {
+    ContListSet* differenceSet = new ContListSet();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
         if (!setSecond->isSetHasElement(*iter)){
@@ -148,8 +148,8 @@ Set* Set::differenceOfSets(Set* setSecond) {
 }
 
 // F14 Симметричная разность
-Set* Set::symmetricDifferenceOfSets(Set* setSecond) {
-    Set* unionSet = this->unionOfSets(setSecond);
-    Set* intersectionSet = this->intersectionsOfSets(setSecond);
+ContListSet* ContListSet::symmetricDifferenceOfSets(ContListSet* setSecond) {
+    ContListSet* unionSet = this->unionOfSets(setSecond);
+    ContListSet* intersectionSet = this->intersectionsOfSets(setSecond);
     return unionSet->differenceOfSets(intersectionSet);
 }
