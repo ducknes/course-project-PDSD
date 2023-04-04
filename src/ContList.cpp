@@ -34,7 +34,7 @@ void Set::addNewElement(int element) {
 
 // F5 Создание множества по заданным параметрам, проверяя возможность
 //  создания множества
-Set::Set(int size, int min, int max, char whichCreate) {
+Set::Set(int size, int min, int max) {
     if (size <= 0) {
         set = {};
     }
@@ -50,32 +50,13 @@ Set::Set(int size, int min, int max, char whichCreate) {
     srand(time(nullptr));
     int currentSize = 1;
 
-    switch (whichCreate)
-    {
-    case 'A':
+    this->addNewElement(min + rand() % (max - min + 1));
+    while (currentSize < size) {
+        int temp = this->set.front();
         this->addNewElement(((min + 3) + rand() % ((max - min + 1))) / 3 * 3);
-        while (currentSize < size) {
-            int temp = this->set.front();
-            this->addNewElement(((min + 3) + rand() % ((max - min + 1))) / 3 * 3);
-            if (temp != this->set.front()) {
-                currentSize++;
-            }
+        if (temp != this->set.front()) {
+            currentSize++;
         }
-        break;
-
-    case 'B':
-        this->addNewElement(min + (rand() % ((max / 2 - min / 2))) * 2 + 1);
-        while (currentSize < size) {
-            int temp = this->set.front();
-            this->addNewElement(min + (rand() % ((max / 2 - min / 2))) * 2 + 1);
-            if (temp != this->set.front()) {
-                currentSize++;
-            }
-        }
-        break;
-
-    default:
-        break;
     }
 }
 

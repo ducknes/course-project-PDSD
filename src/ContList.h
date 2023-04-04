@@ -24,7 +24,7 @@ public:
 
     // F5 Создание множества по заданным параметрам, проверяя возможность
     //  создания множества
-    Set(int size, int min, int max, char whichCreate); 
+    Set(int size, int min, int max); 
 
     // F6 Мощность множества
     int setPowers(); 

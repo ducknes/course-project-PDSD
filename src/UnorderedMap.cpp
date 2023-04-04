@@ -1,4 +1,4 @@
-#include "Set.h"
+#include "UnorderedMap.h"
 
 // F1  Создание пустого множества
 Set::Set() {
@@ -12,17 +12,13 @@ bool Set::isSetEmpty() {
 
 // F3 Проверка элемента на принадлежность множеству
 bool Set::isSetHasElement(int element) {
-    if (this->isSetEmpty()) {
-        return false;
-    }
     return this->set.contains(element);
 }
 
 // F4 Добавление нового элемента в начало множества
-//SetList* 
 bool Set::addNewElement(int element) {
     if (!this->isSetHasElement(element)) {
-        return this->set.insert(element).second;
+        return this->set.insert({element, element}).second;
     }
 }
 
@@ -48,7 +44,7 @@ Set::Set(int size, int min, int max) {
         if (this->addNewElement(min + rand() % (max - min + 1))) {
             current_size++;
         }
-    }
+    }   
 }
 
 // F6 Мощность множества
@@ -63,8 +59,8 @@ string Set::setView(char separator) {
     }
     
     string result = "";
-    for (auto iter = this->set.begin(); iter != this->set.end(); ++iter) {
-        result += to_string(*iter) + separator;
+    for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
+        result += to_string(iter->second) + separator;
     }
     return result.erase(result.size() - 1);
 }
@@ -84,8 +80,8 @@ bool Set::isSubSet(Set* setSecond) {
         return false;
     }
 
-    for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
-        if (!setSecond->isSetHasElement(*iter)) {
+    for (auto iter = this->set.begin(); iter != this->set.end(); iter++) {
+        if (!setSecond->isSetHasElement(iter->second)) {
             return false;
         }
     }
@@ -102,11 +98,11 @@ Set* Set::unionOfSets(Set* setSecond) {
     Set* unionSet = new Set();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
-        unionSet->addNewElement(*iter);
+        unionSet->addNewElement(iter->second);
     }
 
     for (auto iter = setSecond->set.begin(); iter != setSecond->set.end(); ++iter){
-        unionSet->addNewElement(*iter);
+        unionSet->addNewElement(iter->second);
     }
 
     return unionSet;
@@ -117,8 +113,8 @@ Set* Set::intersectionsOfSets(Set* setSecond) {
     Set* intersectionSet = new Set();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
-        if (setSecond->isSetHasElement(*iter)){
-            intersectionSet->addNewElement(*iter);
+        if (setSecond->isSetHasElement(iter->second)){
+            intersectionSet->addNewElement(iter->second);
         }
     }
     
@@ -130,8 +126,8 @@ Set* Set::differenceOfSets(Set* setSecond) {
     Set* differenceSet = new Set();
 
     for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
-        if (!setSecond->isSetHasElement(*iter)){
-            differenceSet->addNewElement(*iter);
+        if (!setSecond->isSetHasElement(iter->second)){
+            differenceSet->addNewElement(iter->second);
         }
     }
     

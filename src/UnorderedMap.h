@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-#include <set>
+#include <unordered_map>
 using namespace std;
 
 class Set
 {
 private:
-    set<int> set;
+    unordered_map<int, int> set;
 public:
     // F1  Создание пустого множества
     Set();

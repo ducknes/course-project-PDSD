@@ -1,4 +1,4 @@
-#include "Set.h"
+#include "ForwardList.h"
 
 // F1  Создание пустого множества
 Set::Set() {
@@ -15,14 +15,20 @@ bool Set::isSetHasElement(int element) {
     if (this->isSetEmpty()) {
         return false;
     }
-    return this->set.contains(element);
+
+    for (auto iter = this->set.begin(); iter != this->set.end(); ++iter) {
+        if (*iter == element) {
+            return true;
+        }
+    }
+    return false;
 }
 
 // F4 Добавление нового элемента в начало множества
-//SetList* 
-bool Set::addNewElement(int element) {
+//SetList* s
+void Set::addNewElement(int element) {
     if (!this->isSetHasElement(element)) {
-        return this->set.insert(element).second;
+        this->set.push_front(element);
     }
 }
 
@@ -42,18 +48,21 @@ Set::Set(int size, int min, int max) {
     }
 
     srand(time(nullptr));
-    int current_size = 0;
+    int currentSize = 1;
 
-    while (current_size < size) {
-        if (this->addNewElement(min + rand() % (max - min + 1))) {
-            current_size++;
+    this->addNewElement(min + rand() % (max - min + 1));
+    while (currentSize < size) {
+        int temp = this->set.front();
+        this->addNewElement(((min + 3) + rand() % ((max - min + 1))) / 3 * 3);
+        if (temp != this->set.front()) {
+            currentSize++;
         }
     }
 }
 
 // F6 Мощность множества
 int Set::setPowers() {
-    return this->set.size();
+    return this->set.max_size();
 }
 
 // F7 Вывод элементов множества
@@ -63,7 +72,7 @@ string Set::setView(char separator) {
     }
     
     string result = "";
-    for (auto iter = this->set.begin(); iter != this->set.end(); ++iter) {
+    for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
         result += to_string(*iter) + separator;
     }
     return result.erase(result.size() - 1);
@@ -84,8 +93,8 @@ bool Set::isSubSet(Set* setSecond) {
         return false;
     }
 
-    for (auto iter = this->set.begin(); iter != this->set.end(); ++iter){
-        if (!setSecond->isSetHasElement(*iter)) {
+    for (int i : this->set){
+        if (!setSecond->isSetHasElement(i)) {
             return false;
         }
     }

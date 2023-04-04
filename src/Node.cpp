@@ -39,7 +39,7 @@ Node* addNewElement(Node* first, int element) {
 
 // F5 Создание множества по заданным параметрам, проверяя возможность
 //  создания множества
-Node* createNewSet(int size, int min, int max, char whichCreate) {
+Node* createNewSet(int size, int min, int max) {
     if (size <= 0) {
         return NULL;
     }
@@ -56,33 +56,14 @@ Node* createNewSet(int size, int min, int max, char whichCreate) {
     int currentSize = 1;
     srand(time(NULL));
 
-    switch (whichCreate)
-    {
-    case 'A':
-        newSet->element = ((min + 3) + rand() % ((max - min + 1))) / 3 * 3;
-        while (currentSize < size) {
-            int temp = newSet->element;
-            newSet = addNewElement(newSet, ((min + 3) + rand() % ((max - min + 1))) / 3 * 3);
-            if (temp != newSet->element) {
-                currentSize++;
-            }
+    newSet->element = min + rand() % (max - min + 1);
+    while (currentSize < size) {
+        int temp = newSet->element;
+        newSet = addNewElement(newSet, min + rand() % (max - min + 1));
+        if (temp != newSet->element) {
+            currentSize++;
         }
-        break;
-    case 'B':
-        newSet->element = min + (rand() % ((max / 2 - min / 2))) * 2 + 1;
-        while (currentSize < size) {
-            int temp = newSet->element;
-            newSet = addNewElement(newSet, min + (rand() % ((max - min) / 2)) * 2 + 1);
-            if (temp != newSet->element) {
-                currentSize++;
-            }
-        }
-        break;
-    default:
-        break;
     }
-
-    return newSet;
 }
 
 // F6 Мощность множества

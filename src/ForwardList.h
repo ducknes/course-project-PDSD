@@ -1,13 +1,13 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-#include <set>
+#include <forward_list>
 using namespace std;
 
 class Set
 {
 private:
-    set<int> set;
+    forward_list<int> set;
 public:
     // F1  Создание пустого множества
     Set();
@@ -20,7 +20,7 @@ public:
 
     // F4 Добавление нового элемента в начало множества
     //SetList* 
-    bool addNewElement(int element);
+    void addNewElement(int element);
 
     // F5 Создание множества по заданным параметрам, проверяя возможность
     //  создания множества

@@ -22,7 +22,7 @@ Node* addNewElement(Node* first, int element);
 
 // F5 Создание множества по заданным параметрам, проверяя возможность
 //  создания множества
-Node* createNewSet(int size, int min, int max, char whichCreate); 
+Node* createNewSet(int size, int min, int max); 
 
 // F6 Мощность множества
 int setPowers(Node* first); 
