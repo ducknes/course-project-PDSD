@@ -20,6 +20,7 @@ bool UnorderedMapSet::addNewElement(int element) {
     if (!this->isSetHasElement(element)) {
         return this->set.insert({element, element}).second;
     }
+    return false;
 }
 
 // F5 Создание множества по заданным параметрам, проверяя возможность
@@ -38,11 +39,10 @@ UnorderedMapSet::UnorderedMapSet(int size, int min, int max) {
     }
 
     srand(time(nullptr));
-    int current_size = 0;
 
-    while (current_size < size) {
-        if (this->addNewElement(min + rand() % (max - min + 1))) {
-            current_size++;
+    while (this->set.size() < size) {
+        if (!this->addNewElement(min + rand() % (max - min + 1))) {
+            continue;
         }
     }   
 }

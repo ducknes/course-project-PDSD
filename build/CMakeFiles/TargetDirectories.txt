@@ -1,0 +1,3 @@
+/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build/CMakeFiles/course_project_pdsd.dir
+/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build/CMakeFiles/edit_cache.dir
+/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build/CMakeFiles/rebuild_cache.dir

@@ -64,6 +64,8 @@ Node* createNewSet(int size, int min, int max) {
             currentSize++;
         }
     }
+
+    return newSet;
 }
 
 // F6 Мощность множества

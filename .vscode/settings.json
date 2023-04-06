@@ -2,6 +2,8 @@
     "files.associations": {
         "list": "cpp",
         "unordered_map": "cpp",
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "ostream": "cpp"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/src"
 }

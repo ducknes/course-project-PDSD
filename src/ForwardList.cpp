@@ -62,7 +62,7 @@ ForwardListSet::ForwardListSet(int size, int min, int max) {
 
 // F6 Мощность множества
 int ForwardListSet::setPowers() {
-    return this->set.max_size();
+    return distance(this->set.begin(), this->set.end());
 }
 
 // F7 Вывод элементов множества

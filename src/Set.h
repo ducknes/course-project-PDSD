@@ -4,13 +4,13 @@
 #include <set>
 using namespace std;
 
-class Set
+class SetClass
 {
 private:
     set<int> set;
 public:
     // F1  Создание пустого множества
-    Set();
+    SetClass();
 
     // F2 Проверка на пустоту множества
     bool isSetEmpty();
@@ -24,7 +24,7 @@ public:
 
     // F5 Создание множества по заданным параметрам, проверяя возможность
     //  создания множества
-    Set(int size, int min, int max); 
+    SetClass(int size, int min, int max); 
 
     // F6 Мощность множества
     int setPowers(); 
@@ -33,23 +33,23 @@ public:
     string setView(char separator); 
 
     // F8 Удаление множества (очистка занимаемой множеством памяти)
-    ~Set();
+    ~SetClass();
 
     // F9 Подмножестов А-B
-    bool isSubSet(Set* setSecond);
+    bool isSubSet(SetClass* setSecond);
 
     // F10 Равенство двух множеств А-В
-    bool isSetsEquals(Set* setSecond);
+    bool isSetsEquals(SetClass* setSecond);
 
     // F11 Объединение двух множеств
-    Set* unionOfSets(Set* setSecond);
+    SetClass* unionOfSets(SetClass* setSecond);
 
     // F12 Пересечение двух множеств
-    Set* intersectionsOfSets(Set* setSecond);
+    SetClass* intersectionsOfSets(SetClass* setSecond);
 
     // F13 Разность множеств
-    Set* differenceOfSets(Set* setSecond);
+    SetClass* differenceOfSets(SetClass* setSecond);
 
     // F14 Симметричная разность
-    Set* symmetricDifferenceOfSets(Set* setSecond);
+    SetClass* symmetricDifferenceOfSets(SetClass* setSecond);
 };

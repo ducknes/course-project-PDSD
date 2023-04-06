@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build",
+  "command": "/usr/bin/clang++ -I\"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/.\" -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.2 -std=gnu++20 -o CMakeFiles/course_project_pdsd.dir/main.cpp.o -c \"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/main.cpp\"",
+  "file": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/main.cpp"
+},
+{
+  "directory": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build",
+  "command": "/usr/bin/clang++ -I\"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/.\" -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.2 -std=gnu++20 -o CMakeFiles/course_project_pdsd.dir/ContList.cpp.o -c \"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/ContList.cpp\"",
+  "file": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/ContList.cpp"
+},
+{
+  "directory": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build",
+  "command": "/usr/bin/clang++ -I\"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/.\" -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.2 -std=gnu++20 -o CMakeFiles/course_project_pdsd.dir/ForwardList.cpp.o -c \"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/ForwardList.cpp\"",
+  "file": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/ForwardList.cpp"
+},
+{
+  "directory": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build",
+  "command": "/usr/bin/clang++ -I\"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/.\" -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.2 -std=gnu++20 -o CMakeFiles/course_project_pdsd.dir/List.cpp.o -c \"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/List.cpp\"",
+  "file": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/List.cpp"
+},
+{
+  "directory": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build",
+  "command": "/usr/bin/clang++ -I\"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/.\" -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.2 -std=gnu++20 -o CMakeFiles/course_project_pdsd.dir/Node.cpp.o -c \"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/Node.cpp\"",
+  "file": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/Node.cpp"
+},
+{
+  "directory": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build",
+  "command": "/usr/bin/clang++ -I\"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/.\" -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.2 -std=gnu++20 -o CMakeFiles/course_project_pdsd.dir/Set.cpp.o -c \"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/Set.cpp\"",
+  "file": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/Set.cpp"
+},
+{
+  "directory": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build",
+  "command": "/usr/bin/clang++ -I\"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/.\" -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.2 -std=gnu++20 -o CMakeFiles/course_project_pdsd.dir/UnorderedMap.cpp.o -c \"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/UnorderedMap.cpp\"",
+  "file": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/UnorderedMap.cpp"
+},
+{
+  "directory": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/build",
+  "command": "/usr/bin/clang++ -I\"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/.\" -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.2 -std=gnu++20 -o CMakeFiles/course_project_pdsd.dir/TableConsoleUI.cpp.o -c \"/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/TableConsoleUI.cpp\"",
+  "file": "/Users/ilyaantonov/Downloads/2 курс/course-project-PDSD/src/TableConsoleUI.cpp"
+}
+]
