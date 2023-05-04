@@ -118,7 +118,7 @@ bool ListSet::isSubSet(ListSet* setSecond) {
     }
     return true;
 }
-  
+
 // F10 Равенство двух множеств А-В
 bool ListSet::isSetsEquals(ListSet* setSecond) {
     return this->isSubSet(setSecond) && setSecond->isSubSet(this);

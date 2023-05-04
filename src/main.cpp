@@ -1,13 +1,12 @@
-#include "TableConsoleUI.h"
 #include "Node.h"
 #include "List.h"
 #include "ContList.h"
 #include "Set.h"
 #include "ForwardList.h"
 #include "UnorderedMap.h"
-#include "TableConsoleUI.h"
 #include "time.h"
 #include <iomanip>
+#include <regex>
 
 void space()
 {
@@ -20,10 +19,31 @@ void space()
 
 int main(int argc, char **argv){
     setlocale(LC_ALL, "Ru");
+
+    regex int_reg("^[0-9]+");
 	
-	cout << "Введите мощность: ";
-    int N;
-    cin >> N;
+	cout << "Введите мощность(>=1000): ";
+    string n; //2147483647
+    cin >> n;
+
+    if (!regex_match(n, int_reg)) {
+        cout << "Вы ввели не целое число!!!" << endl;
+        return 1;
+    }
+
+    int N = stoi(n);
+
+    if (N < 1000) {
+        cout << "Вы ввели маленький размер!!!" << endl;
+        return 1;
+    }
+
+    if (N > (int)(2147483647 / 10)) {
+        cout << "Вы ввели слишком большой размер!!!" << endl; 
+        return 1;
+    }
+
+
 
 
     //диапазон от 0 до 10*n

@@ -22,5 +22,4 @@ add_executable(course_project_pdsd
         Set.h
         UnorderedMap.cpp
         UnorderedMap.h
-        TableConsoleUI.cpp
-        TableConsoleUI.h)
+        )

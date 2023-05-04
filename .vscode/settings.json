@@ -3,7 +3,10 @@
         "list": "cpp",
         "unordered_map": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "set": "cpp",
+        "forward_list": "cpp",
+        "__tree": "cpp"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/src"
 }
